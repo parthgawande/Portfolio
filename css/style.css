@@ -9314,6 +9314,7 @@ textarea.form-control {
 .block-20 {
   overflow: hidden;
   background-size: cover;
+  padding-top: 100%; /* This ensures the div is square */
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
@@ -9439,7 +9440,7 @@ textarea.form-control {
       height: 500px; } }
 
 .contact-section .contact-info p a {
-  color: #fff; }
+  color: #4d4d4d; }
 
 .contact-section .contact-form {
   width: 100%; }
@@ -9469,7 +9470,7 @@ textarea.form-control {
     font-size: 18px;
     font-weight: 300; }
     .block-21 .text .heading a {
-      color: #fff; }
+      color: #4d4d4d; }
       .block-21 .text .heading a:hover, .block-21 .text .heading a:active, .block-21 .text .heading a:focus {
         color: #ffbd39; }
   .block-21 .text .meta > div {
