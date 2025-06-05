@@ -3489,8 +3489,8 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   list-style: none; }
   .navbar-nav .nav-link {
-    padding-right: 0;
-    padding-left: 0; }
+    padding-left: 0.5rem;  /* Try reducing this from default (often 1rem or 15px) */
+    padding-right: 0.5rem; }/* Experiment with values like 0.7rem, 0.6rem, or 10px */
   .navbar-nav .dropdown-menu {
     position: static;
     float: none; }
@@ -8447,12 +8447,24 @@ h1, h2, h3, h4, h5,
     height: 750px;
     z-index: 0; }
     .owl-carousel.home-slider .slider-item {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      height: 750px;
+      background-size: 50% auto; /* Adjust this: e.g., '50% auto' means 50% width, auto height. You can also try 'contain' or pixel values like '400px 300px'. */
+      background-repeat: no-repeat; /* Ensure the image does not repeat */
+      background-position: center center; /* Position the image in the center */
+      background-color: black; /* Sets the background color of the container to black */
+      height: 700px;
       position: relative;
       z-index: 0; }
+
+      #home-section {
+     margin-top: 80px; }
+
+      #home-section .home-slider .slider-item .img {
+        height: 600px; /* Ensures this image container div takes the full height of its parent .slider-item */
+        width: 600px; /* Ensures this div takes the full width of its parent */
+        padding-top: 20px;
+        /* Remove any inline styles for background-image from your HTML if you want to manage it entirely in CSS */
+      }
+
       @media (max-width: 1199.98px) {
         .owl-carousel.home-slider .slider-item {
           background-position: center center !important; } }
@@ -8810,6 +8822,7 @@ h1, h2, h3, h4, h5,
     color: #ffbd39; }
 
 .resume-wrap {
+  min-height: 500px; 
   width: 100%;
   margin-bottom: 30px;
   background: rgba(255, 255, 255, 0.1);
@@ -9312,15 +9325,18 @@ textarea.form-control {
   letter-spacing: .1em; }
 
 .block-20 {
-  overflow: hidden;
-  background-size: cover;
-  padding-top: 100%; /* This ensures the div is square */
+  overflow: hidden; /* Hides any overflow from the background image */
+  background-size: cover; /* Ensures the background image covers the entire area */
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
-  display: block;
-  width: 100%;
-  height: 180px; }
+  display: block; /* Ensures it behaves like a block element */
+
+  /* --- THE KEY CHANGES FOR SIZE --- */
+  width: 450px; /* Set your desired square width here (e.g., 60px, 80px, 120px) */
+  height: 450px; /* Set height to match width to ensure a perfect square */
+  /* Remove padding-top: 100%; when you have fixed width and height for a square */
+}
 
 .blog-entry {
   position: relative; }
@@ -9704,3 +9720,4 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
